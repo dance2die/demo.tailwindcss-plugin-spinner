@@ -122,7 +122,64 @@ const spinnerComponentPlugin = plugin(function ({ addComponents }) {
     },
   };
 
+  const loader = {
+    ".loader,\n.loader:before,\n.loader:after": { borderRadius: "50%" },
+    ".loader": {
+      color: "#ffffff",
+      fontSize: "11px",
+      textIndent: "-99999em",
+      margin: "55px auto",
+      position: "relative",
+      width: "10em",
+      height: "10em",
+      boxShadow: "inset 0 0 0 1em",
+      WebkitTransform: "translateZ(0)",
+      msTransform: "translateZ(0)",
+      transform: "translateZ(0)",
+    },
+    ".loader:before,\n.loader:after": { position: "absolute", content: "''" },
+    ".loader:before": {
+      width: "5.2em",
+      height: "10.2em",
+      background: "#8e2f83",
+      borderRadius: "10.2em 0 0 10.2em",
+      top: "-0.1em",
+      left: "-0.1em",
+      WebkitTransformOrigin: "5.1em 5.1em",
+      transformOrigin: "5.1em 5.1em",
+      WebkitAnimation: "load2 2s infinite ease 1.5s",
+      animation: "load2 2s infinite ease 1.5s",
+    },
+    ".loader:after": {
+      width: "5.2em",
+      height: "10.2em",
+      background: "#8e2f83",
+      borderRadius: "0 10.2em 10.2em 0",
+      top: "-0.1em",
+      left: "4.9em",
+      WebkitTransformOrigin: "0.1em 5.1em",
+      transformOrigin: "0.1em 5.1em",
+      WebkitAnimation: "load2 2s infinite ease",
+      animation: "load2 2s infinite ease",
+    },
+    "@-webkit-keyframes load2": {
+      "0%": { WebkitTransform: "rotate(0deg)", transform: "rotate(0deg)" },
+      "100%": {
+        WebkitTransform: "rotate(360deg)",
+        transform: "rotate(360deg)",
+      },
+    },
+    "@keyframes load2": {
+      "0%": { WebkitTransform: "rotate(0deg)", transform: "rotate(0deg)" },
+      "100%": {
+        WebkitTransform: "rotate(360deg)",
+        transform: "rotate(360deg)",
+      },
+    },
+  };
+
   addComponents(spinners);
+  addComponents(loader);
 });
 
 module.exports = {

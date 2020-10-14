@@ -24,7 +24,8 @@ function App() {
       </p>
       {/* <button className="btn bg-green-500 hover:bg-green-400 text-white"> */}
       <button className="btn btn-red">Button</button>
-      <div className="spinner">Custom spinner</div>
+      <div className="spinner text-red-500 bg-orange-400">Custom spinner</div>
+      <div className="loader bg-orange-300">Custom spinner</div>
       <div className="mt-4 flex justify-center">
         <a
           className="bg-indigo-500 hover:bg-indigo-600 text-white py-2 px-4 rounded"
